@@ -1,0 +1,21 @@
+{
+  "AccountId": "1234567890",
+  "IPAddresses": {
+    "Office"  : ["1.2.3.4/32", "2.3.4.5/24"],
+    "Github"  : ["192.30.252.0/22"],
+    "MyHome"  : ["9.8.7.6/32"],
+  },
+
+  "Regions": [
+    { "Id": "us-east-1",
+      "AvailabilityZones": [ "a", "b", "d", "e" ],
+      "AMIs": {{{include 'blueprints/common/AMIs.us-east-1.json'}}},
+      "ArtifactsBucket": "my-artifacts-us-east-1"
+    },
+    { "Id": "us-west-2",
+      "AvailabilityZones": [ "a", "b", "c" ],
+      "AMIs": {{{include 'blueprints/common/AMIs.us-west-2.json'}}},
+      "ArtifactsBucket": "my-artifacts-us-west-2"
+    }
+  ]
+}

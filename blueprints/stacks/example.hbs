@@ -1,0 +1,23 @@
+{
+	"ProjectName" : "MyStack",
+	"Owner"				: "My Name",
+	"Template"		: "common/base-all.hbs",
+	"Region"			: "us-east-1",
+
+	"IAMRoles": [
+		{	"Name": "MyRole",
+			"ManagedPolicyArns": ["arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"]
+		}
+	],
+
+	"EC2SecurityGroups": [
+		{	"Name": "MyGroup",
+			"SecurityGroupIngress": [
+				{	"IpProtocol": "tcp", "FromPort": 22, "ToPort": 22, "CidrIp": "0.0.0.0/0" }
+			],
+			"SecurityGroupEgress": [
+				{ "IpProtocol": "tcp", "CidrIp": "0.0.0.0/0" }
+			]
+		}
+	]
+}

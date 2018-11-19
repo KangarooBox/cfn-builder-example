@@ -1,21 +1,27 @@
 {
   "AccountId": "1234567890",
   "IPAddresses": {
-    "Office"  : ["1.2.3.4/32", "2.3.4.5/24"],
-    "Github"  : ["192.30.252.0/22"],
-    "MyHome"  : ["9.8.7.6/32"]
+    "Office": ["1.2.3.4/32", "2.3.4.5/24"], 
+    "Github": ["192.30.252.0/22"], 
+    "MyHome": ["9.8.7.6/32"]
   },
-
   "Regions": [
-    { "Id": "us-east-1",
-      "AvailabilityZones": [ "a", "b", "d", "e" ],
-      "AMIs": {{{include 'blueprints/common/AMIs.us-east-1.json'}}},
-      "ArtifactsBucket": "my-artifacts-us-east-1"
+    {
+      "Id": "us-east-1",
+      "AvailabilityZones": ["a", "b", "d", "e"],
+      "ArtifactsBucket": "my-artifacts-us-east-1",
+      "AMIs": {"win2012_core": "ami-09800c76", "win2012_base": "ami-2a9a1655", "linux_amazon": "ami-14c5486b"}
     },
-    { "Id": "us-west-2",
-      "AvailabilityZones": [ "a", "b", "c" ],
-      "AMIs": {{{include 'blueprints/common/AMIs.us-west-2.json'}}},
-      "ArtifactsBucket": "my-artifacts-us-west-2"
+    {
+      "Id": "us-west-2",
+      "AvailabilityZones": ["a", "b", "c"],
+      "ArtifactsBucket": "my-artifacts-us-west-2",
+      "AMIs": {"win2012_core": "ami-abd9a8d3", "win2012_base": "ami-bbd6a7c3", "linux_amazon": "ami-e251209a"}
     }
+  ],
+  "AMIs": [
+    {"Id": "win2012_core", "Platform": "Windows", "Owners": ["amazon"], "Name": "Windows_Server-2012-R2_RTM-English-64Bit-Core-*"},
+    {"Id": "win2012_base", "Platform": "Windows", "Owners": ["amazon"], "Name": "Windows_Server-2012-R2_RTM-English-64Bit-Base-*"},
+    {"Id": "linux_amazon", "Owners": ["amazon"], "Name": "amzn-ami-hvm-20*-gp2"}
   ]
 }

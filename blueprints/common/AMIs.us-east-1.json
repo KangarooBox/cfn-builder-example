@@ -1,9 +1,0 @@
-{
-  "win2012_core": "ami-d19d92c7",
-  "win2012_base": "ami-d79d92c1",
-  "win2016_full": "ami-d4dfd1c2",
-  "win2016_nano": "ami-b83b2cae",
-  "linux_amazon": "ami-0b33d91d",
-  "linux_ubults": "ami-cd0f5cb6",
-  "linux_ubuntu": "ami-ae6272b8"
-}
